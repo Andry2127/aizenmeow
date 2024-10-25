@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<for action="{{url_for('pizzas.add_vote')}}">
+    <label>{{ question }}</label>
+    {% for pizza in pizzas %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="pizza" id="{{ pizza.name }}">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Default radio
+            </label>
+        </div>
+    {% endfor %}
+    <input type="submit">
+</for>
+
+{% endblock content %}
